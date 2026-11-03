@@ -1,1 +1,78 @@
-skdjfjsldfk
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미니 달리기 게임</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #dff5ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+h1 { color: #28618c; margin-top: 25px; }
+#game {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 350px;
+  margin: 30px auto;
+  background: linear-gradient(#8ed7ff, #e8faff);
+  border: 4px solid #438bb4;
+  border-radius: 15px;
+  overflow: hidden;
+}
+#player {
+  position: absolute;
+  left: 70px;
+  bottom: 45px;
+  font-size: 48px;
+  z-index: 2;
+}
+.obstacle {
+  position: absolute;
+  bottom: 45px;
+  right: -50px;
+  font-size: 40px;
+}
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background: #62bd65;
+  border-top: 5px solid #398d45;
+}
+#score {
+  font-size: 22px;
+  color: #20577e;
+  font-weight: bold;
+}
+#message {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  color: #20577e;
+  z-index: 5;
+}
+button {
+  border: none;
+  border-radius: 12px;
+  background: #348ed0;
+  color: white;
+  padding: 13px 28px;
+  font-size: 18px;
+  cursor: pointer;
+}
+button:hover { background: #176ba9; }
+#hint { color: #47758f; }
+</style>
+</head>
+<body>
+
+<h1>🏃 미
