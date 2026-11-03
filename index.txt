@@ -133,3 +133,14 @@ firebase.json           (호스팅 배포 경로 설정)
    - 사장님용: https://[새프로젝트ID].web.app/admin/
 
 ================================================================================
+--------------------------------------------------------------------------------
+[ 주요 바로가기 링크 ]
+- GitHub index.txt 직접 보기:
+  https://github.com/junhohonggoat/test/blob/main/index.txt
+
+- GitHub test 저장소:
+  https://github.com/junhohonggoat/test
+
+- 파이어베이스 콘솔:
+  https://console.firebase.google.com/
+--------------------------------------------------------------------------------
