@@ -55,7 +55,7 @@
    - 프로젝트 홈 화면(프로젝트 개요 옆 톱니바퀴 -> 프로젝트 설정) 이동
    - 화면 하단 '내 앱' 섹션에서 [</>] (웹 아이콘) 클릭
    - 앱 닉네임 입력 (예: 맘가득찬웹) 후 [앱 등록]
-   - 화면에 표시되는 irebaseConfig 코드(apiKey, projectId 등) 확인
+   - 화면에 표시되는 `firebaseConfig` 코드(apiKey, projectId 등) 확인
 
 --------------------------------------------------------------------------------
 4. 3단계: 개인정보 보호 & 보안 규칙(Security Rules) 설정
@@ -68,7 +68,7 @@ service cloud.firestore {
     
     // 관리자 판별 함수: admins 컬렉션에 해당 이메일이 등록되어 있는지 검사
     function isAdmin() {
-      return request.auth != null && exists(/databases//documents/admins/);
+      return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
     }
 
     // 1. 관리자 명단: 관리자 본인만 확인 가능
@@ -98,9 +98,9 @@ service cloud.firestore {
 --------------------------------------------------------------------------------
 Firestore 콘솔 -> [데이터(Data)] 탭 이동:
 1) [+ 컬렉션 시작] 클릭
-2) 컬렉션 ID: dmins 입력 후 [다음]
+2) 컬렉션 ID: `admins` 입력 후 [다음]
 3) 문서 ID에 사장님의 구글 이메일 주소 직접 입력 (예: mailinnence@gmail.com)
-4) 필드에 ole: "admin" 하나 넣고 [저장]
+4) 필드에 `role: "admin"` 하나 넣고 [저장]
 -> 이제 사장님 구글 계정으로 로그인하면 관리자 권한이 정상 부여됩니다.
 
 --------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ public/
 firebase.json           (호스팅 배포 경로 설정)
 .firebaserc             (새로 만든 파이어베이스 프로젝트 ID 지정)
 
-* 각 html 파일의 irebaseConfig 객체 안에 3단계에서 발급받은 새 프로젝트 키를 입력합니다.
+* 각 html 파일의 `firebaseConfig` 객체 안에 3단계에서 발급받은 새 프로젝트 키를 입력합니다.
 
 --------------------------------------------------------------------------------
 7. 6단계: 내 컴퓨터에서 배포(Deploy) 및 웹사이트 공개
