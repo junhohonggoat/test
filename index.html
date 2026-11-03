@@ -177,13 +177,13 @@ function draw() {
     });
 
     // 적 우주선
-    ctx.fillStyle = "#ff4757";
+    ctx.fillStyle = "#3A86FF";
     enemies.forEach(e => {
         ctx.fillRect(e.x, e.y, e.w, e.h);
         ctx.fillStyle = "#fff";
         ctx.fillRect(e.x + 8, e.y + 10, 7, 7);
         ctx.fillRect(e.x + 25, e.y + 10, 7, 7);
-        ctx.fillStyle = "#ff4757";
+        ctx.fillStyle = "#3A86FF";
     });
 
     if (gameOver) {
